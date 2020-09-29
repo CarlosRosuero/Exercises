@@ -32,4 +32,5 @@ crosswordFind :: Char -> Int -> Int -> [String] -> [String]
 crosswordFind letter pos len words = [ word | word <- words , length(word) == len , word!!pos==letter]
 
 pythagoreanTriples :: [( Int , Int , Int )]
-pythagoreanTriples = [ ( a , b , c ) | a <- [1..] , b <- [1..] , c <- [1..] , a^2 + b^2 == 0]
+pythagoreanTriples = [ ( a , b , c ) | a <- [1..100] , b <- [1..100] , c <- [1..100] , b > a , a^2 + b^2 == c^2]
+-- Adding the requirement that b be greater than a saves us from repeating triples.
